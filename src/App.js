@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import {auth, ping, response} from './basic/basic'
 
 function App() {
+  //ping();
+  //auth();
+  response();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -22,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;xw
