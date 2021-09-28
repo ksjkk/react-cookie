@@ -49,6 +49,7 @@ const response = () => {
         .then(rv => {
             console.log(rv)
             //console.log(process.env)
+            console.log(getCookie('auth'))
         })
         .catch(console.log)
 }
