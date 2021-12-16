@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import {auth, ping, response} from './basic/basic'
+import {auth, ping, response, dateCheck} from './basic/basic'
 
 function App() {
   //ping();
   //auth();
-  response();
-
+  //response();
+  dateCheck();
   return (
     <div className="App">
       <header className="App-header">

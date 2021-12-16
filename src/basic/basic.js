@@ -1,4 +1,5 @@
 import axios from "axios"
+import moment from "moment"
 //import qs from 'querystring'
 import {Cookies} from 'react-cookie'
 
@@ -24,6 +25,9 @@ const axiosConfig = {
 
 const get = (path) => {
     return axios.create(axiosConfig).get(path,{withCredentials: true})
+}
+const post = (path, data) => {
+    return axios.create(axiosConfig).post(path, data)
 }
 
 const ping = () => {
@@ -54,4 +58,16 @@ const response = () => {
         .catch(console.log)
 }
 
-export {ping, auth, response}
+const dateCheck = () => {
+    let now = moment().locale('ko')
+    let param = {
+        'localDateTime' : now.toISOString(),
+        'zonedDateTime' : now.toISOString()
+    }
+    console.log(param)
+    post('/log-date-type', param)
+        .then()
+        .catch()
+}
+
+export {ping, auth, response, dateCheck}
